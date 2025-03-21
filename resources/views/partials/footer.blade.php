@@ -46,9 +46,11 @@
                             <li><a href="#!" class="text-white" style="text-decoration: none;">DC Universe</a></li>
                             <li><a href="#!" class="text-white" style="text-decoration: none;">DC Power Visa</a></li>
                         </ul>
-                        <img src="{{ asset('img/dc-logo-bg.png') }}" alt="DC Logo" style="position: absolute; right: 10em; bottom: -80em; width: 30%;">
+
                     </div>
+
                 </div>
+
             </div>
         </div>
     </div>

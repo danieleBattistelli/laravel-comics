@@ -7,7 +7,8 @@ Route::get('/characters', function () {
 })->name('characters');
 
 Route::get('/comics', function () {
-    return view('comics');
+    $comics = config('comics');
+    return view('comics', ['comics' => $comics]);
 })->name('comics');
 
 Route::get('/movies', function () {

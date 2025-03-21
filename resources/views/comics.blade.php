@@ -6,25 +6,38 @@ home
 
 @section('content')
 
-<div class="container">
-    <h1>Ecco le mie card</h1>
-
-    <div class="row">
-        @for ($i = 0; $i < 9; $i++) <div class="col-md-4 mb-4">
-            <!-- Inizio Card Bootstrap -->
-            <div class="card" style="width: 18rem;">
-                <img src="https://imgs.search.brave.com/aUNyvZBXUulb963JH7KnQm9AMr8bcBoLsiHREOqayIU/rs:fit:612:612:1/g:ce/aHR0cHM6Ly9pNS53/YWxtYXJ0aW1hZ2Vz/LmNvbS9hc3IvOWZm/ZWYzMDMtMGZhYy00/OGRkLTg3ODctYzUy/NTk0MDk2ODAwXzEu/MTc1ZDk1Mjg2NzY0/OGEwOTczMTY2NGMy/MTE1NjNlYWIuanBl/Zz9vZG5XaWR0aD02/MTImb2RuSGVpZ2h0/PTYxMiZvZG5CZz1m/ZmZmZmY" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Titolo della Card {{ $i + 1 }}</h5>
-                    <p class="card-text">Alcuni contenuti di esempio per la card {{ $i + 1 }}.</p>
-                    <a href="#" class="btn btn-primary">Vai da qualche parte</a>
-                </div>
-            </div>
-            <!-- Fine Card Bootstrap -->
-    </div>
-    @endfor
+<div class="container-fluid" style="padding: 0;">
+    <img src="{{ asset('img/jumbotron.jpg')}}" alt="jumbotron" height="200" width="100%" style="object-fit: cover; object-position: top;">
 </div>
 
+<div class="container-fluid" style="background-color: black; color: white; padding: 0;">
+    <div class="container">
+        <button class="btn btn-primary m-4">CURRENT SERIES</button>
+        <div class="row">
+            @foreach ($comics as $comic)
+            <div class="col-md-2 mb-4">
+                <!-- Cambiato da col-md-4 a col-md-2 -->
+                <!-- Inizio Card Bootstrap -->
+                <div class="card bg-dark text-white" style="width: 10rem; height: 23rem;">
+                    <!-- Aggiunto height: 18rem; -->
+                    <div>
+                        <img src="{{ $comic['thumb'] }}" class="card-img-top" alt="cover-comics">
+                    </div>
+
+                    <div class="card-body">
+                        <h5 class="card-title">{{ $comic['title'] }}</h5>
+
+                        <!-- Rimosso il bottone -->
+                    </div>
+                </div>
+                <!-- Fine Card Bootstrap -->
+            </div>
+            @endforeach
+        </div>
+        <div class="d-flex justify-content-center">
+            <button class="btn btn-primary my-4">LOAD MORE</button>
+        </div>
+    </div>
 </div>
 
 @endsection

@@ -3,7 +3,7 @@
 <head>
     <!-- ...existing code... -->
 </head>
-<body>
+<body></body>
     <!-- ...existing code... -->
     <footer style="background-image: url('{{ asset('img/footer-bg.jpg') }}');">
         <!-- ...existing code... -->
